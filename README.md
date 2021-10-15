@@ -4,7 +4,6 @@
 
 > The Math magician calc app solves simple caculations
 
-![screenshot]()
 
 This app does the following:
 
