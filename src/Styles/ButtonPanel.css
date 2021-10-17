@@ -1,0 +1,10 @@
+.buttonFlex {
+ display: flex;
+ justify-content: space-around;
+ margin-top: 40px;
+}
+
+Button {
+ font-size: 1.5rem;
+ font-weight: 800px;
+}

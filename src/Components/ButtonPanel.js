@@ -1,36 +1,37 @@
 import React from 'react';
 import Button from './Button';
+import '../Styles/ButtonPanel.css';
 
 const ButtonPanel = () => (
   <>
-    <div>
-      <Button>AC</Button>
-      <Button>+/-</Button>
-      <Button>%</Button>
-      <Button>÷</Button>
+    <div className="buttonFlex">
+      <Button buttonName="AC" />
+      <Button buttonName="+/-" />
+      <Button buttonName="%" />
+      <Button buttonName="÷" />
     </div>
-    <div>
-      <Button>7</Button>
-      <Button>8</Button>
-      <Button>9</Button>
-      <Button>X</Button>
+    <div className="buttonFlex">
+      <Button buttonName="7" />
+      <Button buttonName="8" />
+      <Button buttonName="9" />
+      <Button buttonName="x" />
     </div>
-    <div>
-      <Button>4</Button>
-      <Button>5</Button>
-      <Button>6</Button>
-      <Button>-</Button>
+    <div className="buttonFlex">
+      <Button buttonName="4" />
+      <Button buttonName="5" />
+      <Button buttonName="6" />
+      <Button buttonName="-" />
     </div>
-    <div>
-      <Button>1</Button>
-      <Button>2</Button>
-      <Button>3</Button>
-      <Button>+</Button>
+    <div className="buttonFlex">
+      <Button buttonName="1" />
+      <Button buttonName="2" />
+      <Button buttonName="3" />
+      <Button buttonName="+" />
     </div>
-    <div>
-      <Button>0</Button>
-      <Button>.</Button>
-      <Button>=</Button>
+    <div className="buttonFlex">
+      <Button buttonName="0" />
+      <Button buttonName="." />
+      <Button buttonName="=" />
     </div>
   </>
 );
