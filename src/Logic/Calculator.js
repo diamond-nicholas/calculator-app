@@ -28,6 +28,18 @@ const Calculator = (calculatorData, buttonName) => {
       result = Big(data.total).times(-1).toString();
       data.total = result;
       return data;
+    case '+':
+    case '-':
+    case 'x':
+    case '÷':
+    case '%':
+      if (data.next) {
+        result = Operate(data.total, data.next, data.operaion);
+        data.total = result;
+        data.next = null;
+        data.operaion = buttonName;
+        return data;
+      }
   }
 };
 
