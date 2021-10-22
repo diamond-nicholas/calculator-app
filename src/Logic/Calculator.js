@@ -1,6 +1,4 @@
 /* eslint-disable default-case */
-/* eslint-disable no-unused-vars */
-import React from 'react';
 import Big from 'big.js';
 import Operate from './Operate';
 
@@ -40,7 +38,46 @@ const Calculator = (calculatorData, buttonName) => {
         data.operaion = buttonName;
         return data;
       }
+      data.operation = buttonName;
+      return data;
+    case '0':
+    case '1':
+    case '2':
+    case '3':
+    case '4':
+    case '5':
+    case '6':
+    case '7':
+    case '8':
+    case '9':
+      if (data.operation) {
+        data.next = `${data.next || ''}${buttonName}`;
+        return data;
+      }
+      data.total = `${data.total || ''}${buttonName}`;
+      return data;
+    case '.':
+      if (data.operation && !data.next.include('.')) {
+        data.next = `${data.next || '0'}${buttonName}`;
+        return data;
+      }
+      if (!data.total.include('.')) {
+        data.total = `${data.total || '0'}${buttonName}`;
+        return data;
+      }
+      return data;
+    case '=':
+      if (data.operation && data.next) {
+        result = Operate(data.total, data.next, data.operation);
+        data.total = result;
+        data.next = null;
+        data.operation = buttonName;
+        return data;
+      }
+      data.operation = buttonName;
+      return data;
   }
+  return {};
 };
 
 export default Calculator;
