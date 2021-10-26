@@ -15,7 +15,7 @@ const Operate = (numberOne, numberTwo, operation) => {
       return a.times(b.div(100)).toString;
     case '÷':
       if (b.eq('0')) {
-        return 'Error';
+        return 'Error - Division by 0';
       }
       return a.div(b).toString;
   }
