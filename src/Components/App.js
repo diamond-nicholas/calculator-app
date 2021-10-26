@@ -1,5 +1,3 @@
-/* eslint-disable react/no-unused-state */
-/* eslint-disable react/prefer-stateless-function */
 /* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
 import ButtonPanel from './ButtonPanel';
@@ -24,9 +22,11 @@ class App extends Component {
   }
 
   render() {
+    const { total, next, operation } = this.state;
+    const result = !next ? total : next;
     return (
       <>
-        <Display />
+        <Display result={result || '0'} />
         <ButtonPanel clickHandler={this.handleClick} />
       </>
     );
