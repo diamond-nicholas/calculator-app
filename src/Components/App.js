@@ -15,6 +15,12 @@ class App extends Component {
       next: null,
       operation: null,
     };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick = (buttonName) => {
+    const data = Calculator(this.state, buttonName);
+    this.setState(data);
   }
 
   render() {
