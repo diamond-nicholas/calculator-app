@@ -1,19 +1,22 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const Button = (props) => {
   const { buttonName, clickHandler } = props;
   const handleClick = () => (clickHandler(buttonName));
   return (
     <div>
-      {buttonName}
+      <button type="button" onClick={handleClick}>{buttonName}</button>
     </div>
   );
 };
 
 Button.propTypes = {
-  buttonName: propTypes.string.isRequired,
+  buttonName: PropTypes.string.isRequired,
+};
+Button.propTypes = {
+  clickHandler: PropTypes.func.isRequired,
 };
 
 export default Button;
