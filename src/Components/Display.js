@@ -1,5 +1,5 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import '../Styles/Display.css';
 
 const Display = (props) => {
@@ -12,7 +12,7 @@ const Display = (props) => {
 };
 
 Display.propTypes = {
-  result: propTypes.string,
+  result: PropTypes.string,
 };
 Display.defaultProps = {
   result: '0',
