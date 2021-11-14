@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 
 const Button = (props) => {
@@ -6,7 +5,7 @@ const Button = (props) => {
   const handleClick = () => (clickHandler(buttonName));
   return (
     <div>
-      <button type="button" onClick={handleClick}>{buttonName}</button>
+      <button type="button" name="button" onClick={handleClick}>{buttonName}</button>
     </div>
   );
 };

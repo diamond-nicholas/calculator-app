@@ -19,11 +19,15 @@ const Calculator = (calculatorData, buttonName) => {
       return data;
     case '+/-':
       if (data.operation && data.next) {
-        result = Big(data.next || 0).times(-1).toString();
+        result = Big(data.next || 0)
+          .times(-1)
+          .toString();
         data.next = result;
         return data;
       }
-      result = Big(data.total || 0).times(-1).toString();
+      result = Big(data.total || 0)
+        .times(-1)
+        .toString();
       data.total = result;
       return data;
     case '+':
