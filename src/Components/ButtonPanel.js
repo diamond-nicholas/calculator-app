@@ -40,9 +40,9 @@ const ButtonPanel = (props) => {
     </>
   );
 };
-
 ButtonPanel.propTypes = {
   clickHandler: PropTypes.func.isRequired,
 };
+/* eslint-disable react/prop-types */
 
 export default ButtonPanel;
