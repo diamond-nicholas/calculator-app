@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import PropTypes from 'prop-types';
 import Button from './Button';
 import '../Styles/ButtonPanel.css';
@@ -40,8 +39,7 @@ const ButtonPanel = (props) => {
     </>
   );
 };
-ButtonPanel.propTypes = {
-  clickHandler: PropTypes.func.isRequired,
-};
+
+ButtonPanel.propTypes = { clickHandler: PropTypes.func.isRequired };
 
 export default ButtonPanel;
