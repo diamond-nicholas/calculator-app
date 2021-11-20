@@ -2,26 +2,14 @@
 import Big from 'big.js';
 import Operate from './Operate';
 
-const Calculator = ({ total, next, operation }, buttonName) => {
-  // const data = calculatorData;
-  const data = {
-    total,
-    next,
-    operation,
-  };
+const Calculator = (calculatorData, buttonName) => {
+  const data = calculatorData;
+
   if (data.operation === '=') {
     data.total = null;
     data.next = null;
     data.operation = null;
   }
-
-  // if (buttonName === '=') {
-  //   if (data.operation && data.next && data.total) {
-  //     data.total = Operate(data.total, data.next, data.operation);
-  //     data.operaion = null;
-  //     data.next = null;
-  //   }
-  // }
 
   let result;
   if (buttonName === '.') {
