@@ -2,15 +2,36 @@
 import Big from 'big.js';
 import Operate from './Operate';
 
-const Calculator = (calculatorData, buttonName) => {
-  const data = calculatorData;
-
-  if (data.Operate === '=') {
+const Calculator = ({ total, next, operation }, buttonName) => {
+  // const data = calculatorData;
+  const data = {
+    total,
+    next,
+    operation,
+  };
+  if (data.operation === '=') {
     data.total = null;
     data.next = null;
     data.operation = null;
   }
+
+  // if (buttonName === '=') {
+  //   if (data.operation && data.next && data.total) {
+  //     data.total = Operate(data.total, data.next, data.operation);
+  //     data.operaion = null;
+  //     data.next = null;
+  //   }
+  // }
+
   let result;
+  if (buttonName === '.') {
+    if (!data.total) {
+      data.total = '0.';
+    } else if (!data.total.includes('.')) {
+      data.total = `${data.total || '0'}${buttonName}`;
+      // return data;
+    }
+  }
   switch (buttonName) {
     case 'AC':
       data.total = null;
@@ -59,16 +80,6 @@ const Calculator = (calculatorData, buttonName) => {
         return data;
       }
       data.total = `${data.total || ''}${buttonName}`;
-      return data;
-    case '.':
-      if (data.operation && !data.next.include('.')) {
-        data.next = `${data.next || '0'}${buttonName}`;
-        return data;
-      }
-      if (!data.total.include('.')) {
-        data.total = `${data.total || '0'}${buttonName}`;
-        return data;
-      }
       return data;
     case '=':
       if (data.operation && data.next) {
